@@ -1,5 +1,5 @@
 {% set name = "imy" %}
-{% set version = "0.3.6" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/imy-{{ version }}.tar.gz
-  sha256: d8c2639bc3e82786ad48b257b8308ee5fc36fd1fc90d96907dc8b95ccaefb26a
+  sha256: e1bb10d280e27ab9d0291643fe33903e23cfb402227bd733706db78ff0a10030
 
 build:
   noarch: python
@@ -16,20 +16,15 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<4.0
-    - poetry-core
+    - python >=3.10
+    - hatchling
     - pip
   run:
-    - python >=3.10.0,<4.0.0
-    - json5 <0.10.0,>=0.9.22
-    - motor <4.0.0,>=3.3.2
-    - uniserde <0.4.0,>=0.3.13
-    - introspection <2.0.0,>=1.8.0
+    - python >=3.10.0
   run_constrained:
-    - json5 >=0.9.22,<0.10.0
-    - motor >=3.3.2,<4.0.0
-    - uniserde >=0.3.13,<0.4.0
-    - introspection >=1.8.0,<2.0.0
+    - json5 >=0.9.22
+    - uniserde >=0.3.14
+    - introspection >=1.9.1
 
 test:
   imports:
