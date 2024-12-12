@@ -1,13 +1,14 @@
 {% set name = "imy" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/imy-{{ version }}.tar.gz
-  sha256: e1bb10d280e27ab9d0291643fe33903e23cfb402227bd733706db78ff0a10030
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/imy-{{ version }}.tar.gz
+  sha256: 773f01a947351e544002b49176044099e4d694ae761b219c355c4de6f319cec3
 
 build:
   noarch: python
@@ -16,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.10.0
+    - python >={{ python_min }}
   run_constrained:
     - json5 >=0.9.22
     - uniserde >=0.3.14
@@ -33,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.com/mad-moo/i-miss-you
