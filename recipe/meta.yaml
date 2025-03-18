@@ -1,5 +1,5 @@
 {% set name = "imy" %}
-{% set version = "0.7.0.post0" %}
+{% set version = "0.7.0.post1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/imy-{{ version }}.tar.gz
-  sha256: a6b55788ac7dd81184dbf1d9fb173a46be385445ed1e7b14e31586a2e949788c
+  sha256: 5862c29034a04c6600d99a3f0bebf7047c3f15e371a0867f50f3b8d74af0a3c6
 
 build:
   noarch: python
